@@ -7,6 +7,12 @@ describe('Should return Greeting Correctly', () => {
   it('should return Hey Cauê', () => {
     const { queryByText } = render(<FirstTestComponent name="Cauê" />)
 
-    expect(queryByText('Hey, Cauê')).toBeInTheDocument()
+    expect(queryByText('Hey, Cauê')).toBeTruthy()
+  })
+
+  it('should return Hey, Fulano', () => {
+    const { queryByText } = render(<FirstTestComponent name="teste" />)
+
+    expect(queryByText('Hey, Fulano')).toBeInTheDocument()
   })
 })

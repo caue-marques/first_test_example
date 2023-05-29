@@ -5,9 +5,17 @@ interface Props {
 }
 
 const FirstTestComponent = ({ name }: Props) => {
+  if (name === 'Cauê') {
+    return (
+      <div>
+        <p>Hey, {name}</p>
+      </div>
+    )
+  }
+
   return (
     <div>
-      <p>Hey, {name}</p>
+      <p>Hey, Fulano</p>
     </div>
   )
 }
