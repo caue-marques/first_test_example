@@ -12,6 +12,7 @@
   "include": [
     "./typings/*.d.ts",
     "./**/*.tsx",
-    "./**/*.ts"
+    "./**/*.ts",
+    "__mocks__/vtex.product-context/useProduct.ts"
   ]
 }
