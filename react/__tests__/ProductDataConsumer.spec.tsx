@@ -13,7 +13,7 @@ const mockProduct = (selectedItem: Item | undefined) => {
   }))
 }
 
-const mockProduct2 = (availableQuantity: number | undefined) => {
+const mockProductQuantity = (availableQuantity: number | undefined) => {
   mockedUseProduct.mockImplementation(() => ({
     selectedItem: {
       sellers: [
@@ -28,15 +28,15 @@ const mockProduct2 = (availableQuantity: number | undefined) => {
 }
 
 describe('should return product quantity correctly', () => {
-  it('should return Out of stock when quantity is zero', () => {
-    mockProduct2(0)
+  it('should display Out of stock when quantity is zero', () => {
+    mockProductQuantity(0)
     const { getByText } = render(<ProductDataConsumer />)
 
     expect(getByText('Out of stock')).toBeDefined()
   })
 
-  it('should return Last units available when quantity greate than zero and less than ten', () => {
-    mockProduct2(9)
+  it('should display Last units available when quantity greater than zero and less than ten', () => {
+    mockProductQuantity(9)
     const { getByText } = render(<ProductDataConsumer />)
 
     expect(getByText('Last units available')).toBeDefined()
@@ -51,7 +51,7 @@ describe('should return product specs correctly', () => {
     expect(getByText('you are not in a product page')).toBeTruthy()
   })
 
-  it('should return current product info when inside a product page', () => {
+  it('should return current product itemId, nameComplete and ean when inside a product page', () => {
     mockProduct({
       complementName: 'teste',
       ean: '12321312313',

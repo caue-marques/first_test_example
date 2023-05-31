@@ -14,7 +14,7 @@ const ProductDataConsumer = () => {
         <div>
           <h2>Product information</h2>
 
-          <h4>Last units available</h4>
+          <h4 data-testid="test">Last units available</h4>
 
           <div>Prod Id: {prod.itemId}</div>
           <div>Prod Name: {prod.nameComplete}</div>
@@ -28,7 +28,7 @@ const ProductDataConsumer = () => {
         <div>
           <h2>Product information</h2>
 
-          <h4>Out of stock</h4>
+          <h4 data-testid="test">Out of stock</h4>
 
           <div>Prod Id: {prod.itemId}</div>
           <div>Prod Name: {prod.nameComplete}</div>
